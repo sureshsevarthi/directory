@@ -10,7 +10,9 @@
   "dependencies": {
     "@material-ui/core": "^4.4.0",
     "react": "16.8.6",
-    "react-native": "0.60.5"
+    "react-native": "0.60.5",
+    "react-native-azure-ad": "^0.2.4",
+    "react-native-vector-icons": "^6.6.0"
   },
   "devDependencies": {
     "@babel/core": "^7.6.0",

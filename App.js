@@ -6,7 +6,7 @@
  * @flow
  */
 
-import React, { Fragment } from 'react';
+import React, { Fragment, useState } from 'react';
 import {
   SafeAreaView,
   StyleSheet,
@@ -14,8 +14,7 @@ import {
   View,
   Text,
   StatusBar,
-  Button,
-  TextInput
+  DatePickerIOS,
 } from 'react-native';
 
 import {
@@ -27,7 +26,14 @@ import {
 
 import { Header } from './src/components'
 
-const App = () => {
+export function App() {
+
+  const [chosenDate, setChosenDate] = useState(new Date())
+
+  function setDate(newDate) {
+    setChosenDate(newDate)
+  }
+
   return (
     <Fragment>
       <StatusBar barStyle="dark-content" />
@@ -42,6 +48,10 @@ const App = () => {
             </View>
           )}
           <Header />
+          <DatePickerIOS
+            date={chosenDate}
+            onDateChange={setDate}
+          />
           <View style={styles.body}>
           </View>
         </ScrollView>
